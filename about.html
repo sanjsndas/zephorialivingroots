@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About · Zephoria Living Roots</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8f5f0;
+      color: #1f2a1f;
+      line-height: 1.7;
+      padding: 0 1.5rem;
+    }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1.8rem 0 3rem;
+    }
+    :root {
+      --moss: #2f4b2f;
+      --clay: #b87b5a;
+      --linen: #f2ebe1;
+      --sage: #7d9b7a;
+      --charcoal: #1e2b1e;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Instrument Serif', serif;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: var(--charcoal);
+    }
+    h1 {
+      font-size: 3.6rem;
+      line-height: 1.1;
+    }
+    h2 {
+      font-size: 2.4rem;
+      margin: 2.2rem 0 1rem;
+      border-bottom: 2px solid rgba(47, 75, 47, 0.15);
+      padding-bottom: 0.4rem;
+    }
+    h3 {
+      font-size: 1.7rem;
+      margin: 1.8rem 0 0.6rem;
+      font-weight: 500;
+    }
+    p {
+      margin-bottom: 1.3rem;
+      font-weight: 350;
+    }
+    a {
+      color: var(--moss);
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(47, 75, 47, 0.2);
+      transition: all 0.1s;
+    }
+    a:hover {
+      border-bottom: 2px solid var(--clay);
+      color: var(--clay);
+    }
+    .btn {
+      display: inline-block;
+      background: var(--moss);
+      color: #f8f5f0;
+      padding: 0.7rem 1.9rem;
+      border-radius: 40px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      border: none;
+      transition: background 0.2s;
+      border-bottom: 0;
+    }
+    .btn:hover {
+      background: var(--clay);
+      color: #f8f5f0;
+      border-bottom: 0;
+    }
+    .site-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 0 1.2rem;
+      border-bottom: 2px solid rgba(47, 75, 47, 0.2);
+      margin-bottom: 2.5rem;
+    }
+    .logo {
+      font-family: 'Instrument Serif', serif;
+      font-size: 2rem;
+      color: var(--moss);
+      letter-spacing: -0.5px;
+      border-bottom: 0;
+    }
+    .logo span {
+      color: var(--clay);
+      font-style: italic;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      font-weight: 500;
+    }
+    .nav-links a {
+      border-bottom: 0;
+      color: var(--charcoal);
+    }
+    .nav-links a:hover {
+      color: var(--clay);
+      border-bottom: 0;
+    }
+    .hero-about {
+      background: var(--linen);
+      padding: 2.8rem 3rem;
+      border-radius: 48px 48px 48px 8px;
+      margin-bottom: 3rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.02);
+    }
+    .hero-about h1 {
+      font-size: 3.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .hero-about .sub {
+      font-size: 1.2rem;
+      color: #2f4b2fcc;
+      max-width: 700px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.2rem;
+      margin: 2.5rem 0;
+    }
+    .card {
+      background: white;
+      padding: 2rem 1.8rem;
+      border-radius: 32px 8px 32px 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+      border: 1px solid rgba(47, 75, 47, 0.04);
+      transition: all 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(47, 75, 47, 0.06);
+      border-color: var(--sage);
+    }
+    .card h3 {
+      margin-top: 0.2rem;
+    }
+    .card .label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--clay);
+    }
+    .badge {
+      background: var(--sage);
+      color: white;
+      padding: 0.15rem 1rem;
+      border-radius: 60px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+    .timeline {
+      background: var(--linen);
+      padding: 2rem 2.5rem;
+      border-radius: 32px 8px 32px 8px;
+      margin: 2rem 0;
+    }
+    .timeline-item {
+      display: flex;
+      gap: 1.5rem;
+      border-bottom: 1px solid rgba(47,75,47,0.08);
+      padding: 1.2rem 0;
+    }
+    .timeline-item:last-child {
+      border-bottom: 0;
+    }
+    .timeline-year {
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.8rem;
+      color: var(--clay);
+      min-width: 80px;
+    }
+    .quote-block {
+      background: white;
+      padding: 2rem 2.5rem;
+      border-radius: 60px 12px 60px 12px;
+      border-left: 6px solid var(--clay);
+      margin: 2rem 0;
+      font-size: 1.3rem;
+      font-style: italic;
+    }
+    .footer {
+      border-top: 2px solid rgba(47,75,47,0.12);
+      padding: 2.5rem 0 1rem;
+      margin-top: 3rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+    }
+    .footer-col {
+      flex: 1;
+      min-width: 140px;
+    }
+    .footer-col a {
+      display: block;
+      border-bottom: 0;
+      padding: 0.2rem 0;
+    }
+    .footer-copy {
+      width: 100%;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #3a4f3a;
+      margin-top: 1.5rem;
+      border-top: 1px solid rgba(47,75,47,0.08);
+      padding-top: 1.5rem;
+    }
+    @media (max-width: 720px) {
+      body { padding: 0 0.8rem; }
+      .hero-about { padding: 1.8rem; }
+      h1 { font-size: 2.6rem; }
+      .nav-links { gap: 1rem; flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header class="site-header">
+    <a href="index.html" class="logo">Zephoria<span>Living Roots</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html" style="color: var(--clay);">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="terms.html">Terms Of Privacy</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="cookies.html">Cookies Policy</a>
+    </div>
+  </header>
+
+  <!-- about hero -->
+  <section class="hero-about">
+    <h1>Rooted in place,<br>guided by seasons.</h1>
+    <p class="sub">Zephoria Living Roots is a slow-gardening journal and a quiet rebellion against the rush. We cultivate stories, soil, and community — one season at a time.</p>
+    <div style="margin-top: 1.8rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+      <span class="badge">est. 2026</span>
+      <span class="badge" style="background: var(--clay);">ad-free</span>
+      <span class="badge" style="background: var(--moss);">reader supported</span>
+    </div>
+  </section>
+
+  <!-- mission + philosophy -->
+  <div class="grid-2">
+    <div class="card">
+      <span class="label">🌱 Our mission</span>
+      <h3>Deep ecology, deeper knowledge</h3>
+      <p>We believe that gardening is a practice of attention. Our mission is to share practical, evidence-based wisdom that helps growers of all scales build resilience — in their soil, their communities, and themselves.</p>
+      <p>We avoid quick fixes and instead focus on regenerative systems: no-dig, permaculture, heirloom varieties, and ecological design.</p>
+    </div>
+    <div class="card">
+      <span class="label">📖 Our philosophy</span>
+      <h3>Slow gardening for a changing world</h3>
+      <p>Zephoria Living Roots is a space for curiosity, not certainty. We embrace the messiness of nature, the joy of experimentation, and the humility of learning from failure.</p>
+      <p>We are committed to inclusivity, accessibility, and the belief that everyone deserves a patch of earth to tend.</p>
+    </div>
+  </div>
+
+  <!-- author / editor story -->
+  <div class="grid-2" style="margin-top: 1rem;">
+    <div class="card" style="grid-column: span 1;">
+      <span class="label">🧑‍🌾 The editor</span>
+      <h3>Mara Solis</h3>
+      <p>Mara is a horticulturist, writer, and restless experimenter. She spent a decade managing organic farms before trading acres for a half-acre urban food forest in the Pacific Northwest. Her work has appeared in <em>Modern Farmer</em> and <em>Permaculture Magazine</em>.</p>
+      <p>She believes that gardening is a form of storytelling, and that the best stories are written in collaboration with the land.</p>
+      <div style="margin-top: 1rem;"><span class="badge" style="background: var(--clay);">author</span> <span class="badge">zone 7b</span></div>
+    </div>
+    <div class="card" style="grid-column: span 1;">
+      <span class="label">🌿 Contributors</span>
+      <h3>Growers, thinkers, tinkerers</h3>
+      <p>Our contributors include soil scientists, herbalists, agroecologists, and home gardeners who bring diverse perspectives. We prioritise voices from under-represented communities and celebrate the many ways people connect with the living world.</p>
+      <p>If you'd like to pitch a story, we'd love to hear from you.</p>
+      <div style="margin-top: 1rem;"><a href="#" class="btn" style="padding: 0.4rem 1.8rem; font-size: 0.9rem;">Submit a pitch</a></div>
+    </div>
+  </div>
+
+  <!-- timeline -->
+  <div class="timeline">
+    <h2 style="border-bottom: 0; margin-top: 0; font-size: 2.2rem;">Our roots</h2>
+    <div class="timeline-item">
+      <div class="timeline-year">2026</div>
+      <div><strong>Journal launch</strong> — Zephoria Living Roots goes live with a focus on deep-dive articles, resource guides, and a growing library of gardening knowledge.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2025</div>
+      <div><strong>First print edition</strong> — A limited-run zine celebrating soil biodiversity, with illustrations from local artists.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2024</div>
+      <div><strong>Community garden pilot</strong> — We partnered with a neighbourhood association to transform a vacant lot into a pollinator corridor and food garden.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2023</div>
+      <div><strong>Seed of an idea</strong> — Mara begins collecting stories and research for what would become Zephoria Living Roots.</div>
+    </div>
+  </div>
+
+  <!-- quote -->
+  <div class="quote-block">
+    “To garden is to believe in tomorrow. It is an act of radical hope, grounded in the dirt beneath our fingernails.”
+  </div>
+
+  <!-- what we offer -->
+  <h2>What we offer</h2>
+  <div class="grid-2">
+    <div class="card"><h3>📚 In-depth guides</h3><p>From soil biology to pruning techniques — we go beyond the basics with rigour and clarity.</p></div>
+    <div class="card"><h3>🎧 Podcast & video</h3><p>Interviews with growers, field recordings, and visual essays that bring the garden to life.</p></div>
+    <div class="card"><h3>🌍 Community forum</h3><p>A respectful space to ask questions, share successes, and learn from fellow gardeners.</p></div>
+    <div class="card"><h3>📬 Weekly newsletter</h3><p>Curated insights, seasonal tips, and a touch of poetry — delivered to your inbox every Sunday.</p></div>
+  </div>
+
+  <!-- newsletter -->
+  <div style="background: var(--moss); color: #f2ebe1; padding: 2.8rem 2.5rem; border-radius: 60px 12px 60px 12px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem; margin: 2.5rem 0;">
+    <div><h3 style="color: #f2ebe1; margin: 0; font-size: 2rem;">🌿 The Weekly Root</h3><p style="opacity: 0.8; margin: 0.2rem 0 0;">Deep gardening insights, delivered every Sunday.</p></div>
+    <div style="display:flex; flex-wrap:wrap; gap:0.5rem;"><input type="email" placeholder="your@email.com" style="padding: 0.7rem 1.5rem; border-radius: 60px; border: none; min-width: 200px; font-family: 'Inter', sans-serif;"><a href="#" class="btn" style="background: var(--clay); margin-left: 0.5rem;">Subscribe</a></div>
+  </div>
+
+  <!-- footer -->
+  <footer class="footer">
+    <div class="footer-col"><h4 style="font-family:'Instrument Serif';">Zephoria Living Roots</h4><p style="font-size:0.9rem; max-width:200px;">Est. 2026 · Slow gardening for a changing world.</p></div>
+    <div class="footer-col"><a href="#">About</a><a href="#">Contact</a><a href="#">Submissions</a></div>
+    <div class="footer-col"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">RSS</a></div>
+    <div class="footer-col"><span style="opacity:0.6;">© 2026 · root & branch</span></div>
+    <div class="footer-copy">🌱 Built with intention · 100% unique content · authority blog</div>
+  </footer>
+
+</div>
+</body>
+</html>

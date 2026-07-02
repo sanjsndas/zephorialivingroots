@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zephoria Living Roots · Authority Garden Blog</title>
+  <!-- unique typography & modern reset -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8f5f0;  /* warm limestone */
+      color: #1f2a1f;
+      line-height: 1.7;
+      padding: 0 1.5rem;
+    }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1.8rem 0 3rem;
+    }
+    /* unique brand palette: deep moss, clay, linen */
+    :root {
+      --moss: #2f4b2f;
+      --clay: #b87b5a;
+      --linen: #f2ebe1;
+      --sage: #7d9b7a;
+      --charcoal: #1e2b1e;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Instrument Serif', serif;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: var(--charcoal);
+    }
+    h1 {
+      font-size: 3.6rem;
+      line-height: 1.1;
+    }
+    h2 {
+      font-size: 2.4rem;
+      margin: 2.2rem 0 1rem;
+      border-bottom: 2px solid rgba(47, 75, 47, 0.15);
+      padding-bottom: 0.4rem;
+    }
+    h3 {
+      font-size: 1.7rem;
+      margin: 1.8rem 0 0.6rem;
+      font-weight: 500;
+    }
+    p {
+      margin-bottom: 1.3rem;
+      font-weight: 350;
+    }
+    a {
+      color: var(--moss);
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(47, 75, 47, 0.2);
+      transition: all 0.1s;
+    }
+    a:hover {
+      border-bottom: 2px solid var(--clay);
+      color: var(--clay);
+    }
+    .btn {
+      display: inline-block;
+      background: var(--moss);
+      color: #f8f5f0;
+      padding: 0.7rem 1.9rem;
+      border-radius: 40px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      border: none;
+      transition: background 0.2s;
+      border-bottom: 0;
+    }
+    .btn:hover {
+      background: var(--clay);
+      color: #f8f5f0;
+      border-bottom: 0;
+    }
+    /* header */
+    .site-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 0 1.2rem;
+      border-bottom: 2px solid rgba(47, 75, 47, 0.2);
+      margin-bottom: 2.5rem;
+    }
+    .logo {
+      font-family: 'Instrument Serif', serif;
+      font-size: 2rem;
+      color: var(--moss);
+      letter-spacing: -0.5px;
+      border-bottom: 0;
+    }
+    .logo span {
+      color: var(--clay);
+      font-style: italic;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      font-weight: 500;
+    }
+    .nav-links a {
+      border-bottom: 0;
+      color: var(--charcoal);
+    }
+    .nav-links a:hover {
+      color: var(--clay);
+      border-bottom: 0;
+    }
+
+    /* hero */
+    .hero {
+      background: var(--linen);
+      padding: 2.8rem 3rem;
+      border-radius: 48px 48px 48px 8px;
+      margin-bottom: 3rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.02);
+    }
+    .hero-content {
+      flex: 2;
+      min-width: 280px;
+    }
+    .hero-content h1 {
+      font-size: 3.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .hero-content .sub {
+      font-size: 1.2rem;
+      color: #2f4b2fcc;
+      margin-bottom: 1.2rem;
+      font-weight: 350;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.2rem;
+      margin-top: 1.8rem;
+    }
+    .hero-tags span {
+      background: white;
+      padding: 0.2rem 1.2rem;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      border: 1px solid var(--sage);
+      color: var(--moss);
+    }
+    .hero-image {
+      flex: 1;
+      min-width: 180px;
+      background: #dacfc1;
+      border-radius: 60px 12px 60px 12px;
+      height: 200px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300"><rect width="400" height="300" fill="%23b87b5a22"/><path d="M120 80 L180 40 L240 80 L240 160 L180 200 L120 160 Z" fill="%232f4b2f44" stroke="%232f4b2f" stroke-width="2"/><circle cx="180" cy="120" r="28" fill="%237d9b7a55" stroke="%232f4b2f" stroke-width="1.5"/><circle cx="140" cy="140" r="18" fill="%23b87b5a55" stroke="%232f4b2f" stroke-width="1"/><circle cx="220" cy="140" r="18" fill="%23b87b5a55" stroke="%232f4b2f" stroke-width="1"/><path d="M80 180 L140 200 L200 180 L260 200 L320 180" stroke="%232f4b2f" stroke-width="2" fill="none"/></svg>');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.7;
+    }
+
+    /* grid cards */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.2rem;
+      margin: 3rem 0 2rem;
+    }
+    .card {
+      background: white;
+      padding: 2rem 1.8rem;
+      border-radius: 32px 8px 32px 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+      transition: all 0.2s ease;
+      border: 1px solid rgba(47, 75, 47, 0.04);
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(47, 75, 47, 0.06);
+      border-color: var(--sage);
+    }
+    .card .cat {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--clay);
+      border-bottom: 0;
+    }
+    .card h3 {
+      margin: 0.5rem 0 0.4rem;
+      font-size: 1.5rem;
+      line-height: 1.2;
+    }
+    .card p {
+      font-size: 0.95rem;
+      color: #2a372a;
+    }
+    .card .meta {
+      font-size: 0.8rem;
+      color: #5a6e5a;
+      margin-top: 0.8rem;
+    }
+    .featured-img {
+      width: 100%;
+      height: 140px;
+      background: #dacfc1;
+      border-radius: 24px 4px 24px 4px;
+      margin-bottom: 1rem;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200"><rect width="400" height="200" fill="%23b87b5a22"/><circle cx="120" cy="100" r="40" fill="%232f4b2f33" stroke="%232f4b2f" stroke-width="2"/><circle cx="280" cy="90" r="35" fill="%237d9b7a44" stroke="%232f4b2f" stroke-width="2"/><rect x="160" y="130" width="80" height="40" fill="%23b87b5a44" stroke="%232f4b2f" stroke-width="1.5"/><path d="M40 160 L120 140 L200 160 L280 140 L360 160" stroke="%232f4b2f" stroke-width="2" fill="none"/></svg>');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* section header */
+    .section-title {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin: 3rem 0 1.2rem;
+      border-bottom: 2px solid var(--sage);
+      padding-bottom: 0.6rem;
+    }
+    .section-title h2 {
+      border: 0;
+      margin: 0;
+    }
+    .section-title a {
+      font-weight: 500;
+      border-bottom: 0;
+    }
+
+    /* faq */
+    .faq-list {
+      background: var(--linen);
+      padding: 1.5rem 2.2rem;
+      border-radius: 32px 8px 32px 8px;
+      margin: 2rem 0;
+    }
+    .faq-item {
+      border-bottom: 1px solid rgba(47,75,47,0.1);
+      padding: 1.2rem 0;
+    }
+    .faq-item strong {
+      display: block;
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+    }
+    .faq-item p {
+      margin: 0.3rem 0 0;
+    }
+
+    /* newsletter */
+    .newsletter {
+      background: var(--moss);
+      color: #f2ebe1;
+      padding: 2.8rem 2.5rem;
+      border-radius: 60px 12px 60px 12px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin: 2.5rem 0;
+    }
+    .newsletter h3 {
+      color: #f2ebe1;
+      margin: 0;
+      font-size: 2rem;
+    }
+    .newsletter p {
+      margin: 0.2rem 0 0;
+      opacity: 0.8;
+    }
+    .newsletter input {
+      padding: 0.7rem 1.5rem;
+      border-radius: 60px;
+      border: none;
+      min-width: 200px;
+      font-family: 'Inter', sans-serif;
+    }
+    .newsletter .btn {
+      background: var(--clay);
+      margin-left: 0.5rem;
+    }
+
+    /* footer */
+    .footer {
+      border-top: 2px solid rgba(47,75,47,0.12);
+      padding: 2.5rem 0 1rem;
+      margin-top: 3rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+    }
+    .footer-col {
+      flex: 1;
+      min-width: 140px;
+    }
+    .footer-col a {
+      display: block;
+      border-bottom: 0;
+      padding: 0.2rem 0;
+    }
+    .footer-copy {
+      width: 100%;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #3a4f3a;
+      margin-top: 1.5rem;
+      border-top: 1px solid rgba(47,75,47,0.08);
+      padding-top: 1.5rem;
+    }
+
+    /* responsive */
+    @media (max-width: 720px) {
+      body { padding: 0 0.8rem; }
+      .hero { padding: 1.8rem; }
+      h1 { font-size: 2.6rem; }
+      .nav-links { gap: 1rem; flex-wrap: wrap; }
+    }
+    /* unique card design + spacing */
+    .card-featured {
+      background: white;
+      border-left: 6px solid var(--clay);
+    }
+    .inline-icon {
+      display: inline-block;
+      margin-right: 0.3rem;
+    }
+    .badge {
+      background: var(--sage);
+      color: white;
+      padding: 0.15rem 1rem;
+      border-radius: 60px;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+    }
+    hr {
+      border: 0;
+      border-top: 2px dashed rgba(47,75,47,0.15);
+      margin: 2rem 0;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- header -->
+  <header class="site-header">
+    <a href="#" class="logo">Zephoria<span>Living Roots</span></a>
+    <div class="nav-links">
+     <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="terms.html">Terms Of Privacy</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+					<li><a href="cookies.html">Cookies Policy</a></li>
+    </div>
+  </header>
+
+  <!-- hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Rooted in wisdom,<br>grown with care.</h1>
+      <p class="sub">Zephoria Living Roots is a slow-gardening journal for the modern grower — deep soil, deeper knowledge.</p>
+      <div class="hero-tags">
+        <span>🌱 no-dig</span>
+        <span>🌿 permaculture</span>
+        <span>🌸 heirloom</span>
+        <span>🪴 biophilic</span>
+      </div>
+      <div style="margin-top: 1.8rem;"><a href="#" class="btn">Explore the journal →</a></div>
+    </div>
+    <div class="hero-image"></div>
+  </section>
+
+  <!-- featured articles -->
+  <div class="section-title"><h2>Featured deep dives</h2><a href="#">View all →</a></div>
+  <div class="grid-2">
+    <article class="card card-featured">
+      <div class="featured-img"></div>
+      <span class="cat">soil science</span>
+      <h3><a href="#">The living soil food web</a></h3>
+      <p>How fungi, bacteria, and nematodes build underground networks that feed your plants — and how to nurture them.</p>
+      <div class="meta">📆 6 min read · 12 Dec 2025</div>
+    </article>
+    <article class="card card-featured">
+      <div class="featured-img" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 400 200\'><rect width=\'400\' height=\'200\' fill=\'%23b87b5a22\'/><path d=\'M60 100 L100 60 L140 80 L180 40 L220 80 L260 60 L300 100 L260 140 L220 120 L180 160 L140 120 L100 140 Z\' fill=\'%232f4b2f33\' stroke=\'%232f4b2f\' stroke-width=\'2\'/><circle cx=\'200\' cy=\'100\' r=\'30\' fill=\'%237d9b7a44\'/></svg>');"></div>
+      <span class="cat">design</span>
+      <h3><a href="#">Forest garden layers</a></h3>
+      <p>Seven strata of edible abundance — from canopy to root zone. A practical guide to stacking functions in your backyard.</p>
+      <div class="meta">📆 9 min read · 8 Dec 2025</div>
+    </article>
+  </div>
+
+  <!-- beginner guides + expert resources (two columns) -->
+  <div class="grid-2">
+    <div>
+      <div class="section-title" style="margin-top:0;"><h2>🌱 Beginner guides</h2><a href="#">all guides</a></div>
+      <div class="card"><h3><a href="#">Starting a no-dig bed in 7 days</a></h3><p>Cardboard, compost, and patience — the simplest way to build fertility.</p><span class="badge">new</span></div>
+      <div class="card"><h3><a href="#">Seed starting for cold climates</a></h3><p>Window sills, grow lights, and hardening off without the heartbreak.</p></div>
+    </div>
+    <div>
+      <div class="section-title" style="margin-top:0;"><h2>🧑‍🌾 Expert resources</h2><a href="#">library</a></div>
+      <div class="card"><h3><a href="#">Brix & plant health</a></h3><p>Measuring sap sugar as a proxy for nutrient density and pest resistance.</p></div>
+      <div class="card"><h3><a href="#">Mycorrhizal inoculants</a></h3><p>Which species, when to apply, and how to avoid common mistakes.</p></div>
+    </div>
+  </div>
+
+  <!-- popular categories + trending topics -->
+  <div class="grid-2">
+    <div>
+      <div class="section-title" style="margin-top:0;"><h2>📂 Popular categories</h2><a href="#">browse</a></div>
+      <div class="card" style="display:flex; flex-wrap:wrap; gap:0.4rem 0.8rem; background:transparent; border:0; box-shadow:none; padding:0;">
+        <span style="background:#e6ddd2; padding:0.3rem 1.2rem; border-radius:60px;">Soil Biology</span>
+        <span style="background:#dacfc1; padding:0.3rem 1.2rem; border-radius:60px;">Perennial Veg</span>
+        <span style="background:#c1b4a3; padding:0.3rem 1.2rem; border-radius:60px;">Water Harvest</span>
+        <span style="background:#b87b5a22; padding:0.3rem 1.2rem; border-radius:60px;">Pollinator</span>
+        <span style="background:#7d9b7a44; padding:0.3rem 1.2rem; border-radius:60px;">Compost</span>
+      </div>
+    </div>
+    <div>
+      <div class="section-title" style="margin-top:0;"><h2>🔥 Trending topics</h2><a href="#">more</a></div>
+      <div class="card"><h3><a href="#">Regenerative gardening</a></h3><p>Beyond organic: building soil carbon and biodiversity.</p></div>
+      <div class="card"><h3><a href="#">Perennial grains & staples</a></h3><p>Kernza, sorghum, and the future of food forests.</p></div>
+    </div>
+  </div>
+
+  <!-- latest articles & in-depth tutorials -->
+  <div class="section-title"><h2>📰 Latest articles</h2><a href="#">archive</a></div>
+  <div class="grid-2">
+    <div class="card"><span class="cat">pest management</span><h3><a href="#">Aphids: integrated control</a></h3><p>Predatory insects, neem, and companion planting — a tiered approach.</p><div class="meta">3 Jan 2026</div></div>
+    <div class="card"><span class="cat">propagation</span><h3><a href="#">Air layering for fruit trees</a></h3><p>Clone your best apple or fig without rootstock limitations.</p><div class="meta">28 Dec 2025</div></div>
+    <div class="card"><span class="cat">design</span><h3><a href="#">Swales on a suburban slope</a></h3><p>Earthworks that retain water and build fertility in small spaces.</p><div class="meta">20 Dec 2025</div></div>
+  </div>
+
+  <!-- resource hub -->
+  <div class="section-title"><h2>📚 Resource hub</h2><a href="#">all resources</a></div>
+  <div class="grid-2">
+    <div class="card"><h3><a href="#">Soil texture ribbon test</a></h3><p>Identify your soil type with a jar and a strip of cloth.</p></div>
+    <div class="card"><h3><a href="#">Planting calendar (zone 7)</a></h3><p>Monthly tasks, succession sowing, and cover crop timing.</p></div>
+    <div class="card"><h3><a href="#">Garden journal template</a></h3><p>Track observations, yields, and phenology like a pro.</p></div>
+  </div>
+
+  <!-- FAQ section -->
+  <div class="section-title"><h2>❓ Frequently asked questions</h2></div>
+  <div class="faq-list">
+    <div class="faq-item"><strong>What is no-dig gardening?</strong><p>A method that builds soil from the top down without tilling, preserving fungal networks and soil structure. We have a full 10-part series.</p></div>
+    <div class="faq-item"><strong>How do I start a food forest on a small lot?</strong><p>Begin with a guild: one tree, plus shrubs, herbs, and groundcovers. Our 'Forest Garden Layers' article is a great entry point.</p></div>
+    <div class="faq-item"><strong>Do you recommend organic fertilizers?</strong><p>Yes, but we focus on building soil organic matter first. Fertilizers are a supplement, not a foundation.</p></div>
+  </div>
+
+  <!-- newsletter -->
+  <div class="newsletter">
+    <div><h3>🌿 The Weekly Root</h3><p>Deep gardening insights, delivered every Sunday.</p></div>
+    <div style="display:flex; flex-wrap:wrap; gap:0.5rem;"><input type="email" placeholder="your@email.com"><a href="#" class="btn">Subscribe</a></div>
+  </div>
+
+  <!-- footer -->
+  <footer class="footer">
+    <div class="footer-col"><h4 style="font-family:'Instrument Serif';">Zephoria Living Roots</h4><p style="font-size:0.9rem; max-width:200px;">Est. 2026 · Slow gardening for a changing world.</p></div>
+    <div class="footer-col"><a href="#">About</a><a href="#">Contact</a><a href="#">Submissions</a></div>
+    <div class="footer-col"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">RSS</a></div>
+    <div class="footer-col"><span style="opacity:0.6;">© 2026 · root & branch</span></div>
+    <div class="footer-copy">🌱 Built with intention · 100% unique content · authority blog</div>
+  </footer>
+
+  <!-- hidden internal links for SEO (schema-ready) -->
+  <div style="display:none;" itemscope itemtype="https://schema.org/FAQPage">
+    <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Question"><span itemprop="name">What is no-dig gardening?</span><div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer"><div itemprop="text">A method that builds soil from the top down without tilling.</div></div></div>
+  </div>
+</div>
+</body>
+</html>
